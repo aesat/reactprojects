@@ -1,5 +1,5 @@
 import React from 'react'
-//import SearchBar from './SearchBar'
+import SearchBar from './SearchBar'
 import MovieList from './MovieList'
 
 class App extends React.Component {
@@ -52,7 +52,9 @@ class App extends React.Component {
                 "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.",
                 "imageURL": "https://image.tmdb.org/t/p/w220_and_h330_face/6Bbq8qQWpoApLZYWFFAuZ1r2gFw.jpg"
             }
-        ]
+        ],
+
+        searchQuery:""
     }
 
     deleteMovie=(movie)=>{
@@ -60,12 +62,28 @@ class App extends React.Component {
             m=>m.id !== movie.id
         );
 
-        this.setState({
+        // this.setState({
+        //     movies: newMovieList
+        // })
+
+        this.setState(state=>({
             movies: newMovieList
-        })
+        }))
+    }
+
+    searchMovie=(event)=>{
+        //console.log(event.target.value)
+        this.setState({searchQuery: event.target.value})
     }
 
     render() {
+
+       let filteredMovie = this.state.movies.filter(
+           (movie)=>{
+               return movie.name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !==-1
+           }
+       )
+
         return (
             <div className="container">
                 <div className="row">
@@ -73,7 +91,8 @@ class App extends React.Component {
                         
                     </div>
                 </div>
-                <MovieList deleteMovieProps={this.deleteMovie} movies={this.state.movies} />
+                <SearchBar searchMovieProp={this.searchMovie}/>
+                <MovieList deleteMovieProps={this.deleteMovie} movies={filteredMovie} />
             </div>
         )
     }
