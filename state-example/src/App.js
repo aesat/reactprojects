@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
        <Collapse>
-          <Card cardTitle="Bu Bir Karttır"/>
+          <Card cardSubTitle="Evet Bu Bir Karttır" cardTitle="Bu Bir Karttır"/>
        </Collapse>
     </div>
   );

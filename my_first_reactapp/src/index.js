@@ -2,7 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 function App(){
-    return <h1>benim adım esat</h1>
+    return (
+        <div>
+            <h1 style={{border:'2px solid black', color:'red', backgroundColor:'#ccc'}}>
+                benim adım esat
+            </h1>
+        </div>
+    )
 }
 
 ReactDOM.render( 
