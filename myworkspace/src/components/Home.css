@@ -1,0 +1,17 @@
+.App {
+    text-align: center;
+    }
+  .container {
+    background-color: #343A40;
+    
+  }
+  
+  .body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  
+  
