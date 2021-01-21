@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
  
     
-      <div className="container">
+      <div href="/" className="container">
         <NavMenu />
         <div className="body">
         <Card CardDescription="Kahverengi, insanın hızlı hareket etmesini sağlıyormuş. Cansas’da yapılan bir araştırmada, sanat müzesinin duvarlarını değiştirilebilir renklerden yapmışlar. Beyaz ve kahverengi arasındaki farkı ortaya koymak için bir süre duvarları beyaz olarak bırakmışlar. " CardHeader="Brown"/>
